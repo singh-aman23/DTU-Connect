@@ -1,0 +1,40 @@
+.busInfoContainer {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .busInfoHeader {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #343a40;
+    text-align: center;
+  }
+  
+  .busInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .infoItem {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+  }
+  
+  .label {
+    font-weight: 500;
+    color: #6c757d;
+  }
+  
+  .value {
+    font-weight: 700;
+    color: #495057;
+  }
+  
