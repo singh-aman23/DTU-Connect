@@ -1,15 +1,11 @@
-import classes from "./page.module.css";
-import Link from "next/link";
+import AuthForm from "@/components/auth-form";
 
-export default function Home() {
+export default function Home({ searchParams }) {
+  const formMode = searchParams.mode || "login";
+
   return (
     <>
-      <p className={classes.content}>USER SIGNUP/LOGIN PAGE</p>
-      <div className={classes.container}>
-        <Link href="/search" className={classes.link}>
-          <button className={classes.btn}>Click to Continue</button>
-        </Link>
-      </div>
+      <AuthForm mode={formMode} />;
     </>
   );
 }
