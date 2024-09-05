@@ -10,7 +10,7 @@ export default function AuthForm({mode}) {
   return (
     <form className = {classes.authForm} action = {formAction}>
       <div>
-        <img src="/logo.jpg" />
+        <img src="/logo.png" />
       </div>
       <p>
         <input type="email" name="email" id="email" placeholder='Email' />
