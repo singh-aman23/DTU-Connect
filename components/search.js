@@ -48,7 +48,7 @@ export default function Search() {
                 </ul>
               </div>
             ) : (
-              <p className={classes.noBus}>No buses are available right now</p>
+              <div className={classes.noBus}>No buses are available right now</div>
             )}
           </div>
         )}

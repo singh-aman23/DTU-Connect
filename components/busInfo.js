@@ -19,6 +19,8 @@ export default function BusInfo({ busNumber, arrivalTime, departureTime }) {
           </div>
         </div>
       </div>
+
+     
     </>
   );
 }

@@ -1,0 +1,45 @@
+
+.container {
+    border: 2px solid black;
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1.5rem;
+    outline: none;
+    box-sizing: border-box;
+    border-radius: 35px;
+    background-color: #1b2432;
+    color: white;
+    margin: auto;
+  }
+  
+  .timingsContainer {
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .busNumber {
+    text-align: center;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .arrivalTime{
+    color : green;
+    font-weight: bold;
+  
+  }
+  
+  .departureTime{
+    color : red;
+    font-weight: bold;
+  
+  }

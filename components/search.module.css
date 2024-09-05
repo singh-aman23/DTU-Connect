@@ -1,7 +1,19 @@
-.list{
-    list-style-type: none;
-  }
+.list {
+  list-style-type: none;
+}
 
-  .noBus{
-    text-align: center;
-  }
+.noBus {
+  text-align : center;
+  width: 30%;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1.5rem;
+  outline: none;
+  box-sizing: border-box;
+  border-radius: 35px;
+  background-color: #1b2432;
+  color: red;
+  margin : auto;
+  margin-top : 2rem;
+}

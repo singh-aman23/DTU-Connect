@@ -2,7 +2,6 @@
 import { useState } from "react";
 import classes from './searchForm.module.css';
 
-
 const SearchForm = ({ onSearch, isLoading }) => {
     const [startingLocation, setStartingLocation] = useState("");
     const [endingLocation, setEndingLocation] = useState("");
@@ -16,6 +15,7 @@ const SearchForm = ({ onSearch, isLoading }) => {
       <>
         <form className={classes.form} onSubmit={handleSubmit}>
           <div className={classes.container}>
+          
             <input
               type="text"
               id="from"
