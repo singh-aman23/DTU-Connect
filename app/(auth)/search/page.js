@@ -1,6 +1,6 @@
 import { verifyAuth } from "@/lib/auth";
 import { redirect } from "next/navigation";
-import Search from "@/components/search";
+import SearchComponent from "@/components/SearchComponent";
 
 export default async function SearchPage() {
   const authResult = await verifyAuth();
@@ -8,5 +8,5 @@ export default async function SearchPage() {
     return redirect("/");
   }
 
-  return <Search />;
+  return <SearchComponent />;
 }

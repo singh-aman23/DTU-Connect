@@ -1,4 +1,5 @@
-export default function nearBus({ busNumber, arrivalTime, departureTime }){
+import classes from './nearBus.module.css'
+export default function NearBus({ busNumber, arrivalTime, departureTime }){
     return <>
          <div className = {classes.container}>
         <div className = {classes.busNumber}>{busNumber}</div>

@@ -1,19 +1,28 @@
+.searchWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.resultContainer {
+  width: 100%;
+  text-align: center;
+  margin-top: 2rem; 
+}
+
 .list {
   list-style-type: none;
+  margin-bottom : 0.5rem;
 }
 
 .noBus {
-  text-align : center;
-  width: 30%;
+  width: 50%;
   padding: 1rem;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1.5rem;
-  outline: none;
-  box-sizing: border-box;
   border-radius: 35px;
+  font-size: 1.5rem;
   background-color: #1b2432;
   color: red;
-  margin : auto;
-  margin-top : 2rem;
+  margin-top: 2rem;
+  margin:auto;
 }
