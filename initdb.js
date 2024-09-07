@@ -1,5 +1,5 @@
 const sql = require('better-sqlite3');
-const db = sql('bus.db');
+const db = sql(process.env.BUS_DATABASE_URL || 'bus.db'); // Fallback to 'bus.db' if no env variable is set
 
 const busData = [
   {
