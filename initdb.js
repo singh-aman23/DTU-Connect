@@ -144,6 +144,24 @@ const busData = [
   },
 ];
 
+const passengerData = [
+  { name: 'Alice Smith' },
+  { name: 'Bob Johnson' },
+  { name: 'Charlie Brown' },
+  { name: 'David Wilson' },
+  { name: 'Eva Davis' },
+  { name: 'Frank Miller' },
+  { name: 'Grace Lee' },
+  { name: 'Henry Moore' },
+  { name: 'Isla Taylor' },
+  { name: 'Jack Anderson' },
+  { name: 'Katherine Thomas' },
+  { name: 'Liam White' },
+  { name: 'Mia Harris' },
+  { name: 'Noah Martin' },
+  { name: 'Olivia Clark' },
+];
+
 db.prepare(`
   CREATE TABLE IF NOT EXISTS bus (
     bus_number TEXT NOT NULL,  
@@ -154,12 +172,27 @@ db.prepare(`
 );
 `).run();
 
+db.prepare(`
+  CREATE TABLE IF NOT EXISTS passenger (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL
+  );
+`).run();
+
 
 const stmt = db.prepare(`
   INSERT INTO bus (bus_number, starting_location, ending_location, arrival_time, departure_time)
   VALUES (?, ?, ?, ?, ?)
 `);
 
+const stmt1= db.prepare(`
+  INSERT INTO passenger (name)
+  VALUES (?)
+`);
+
+passengerData.forEach(passenger => {
+  stmt1.run(passenger.name);
+});
 busData.forEach(bus => {
   stmt.run(bus.bus_number, bus.starting_location, bus.ending_location, bus.arrival_time, bus.departure_time);
 });

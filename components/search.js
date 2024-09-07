@@ -1,13 +1,27 @@
-'use client';
-import { useState } from "react";
-import SearchForm from "./searchForm";
+import { useEffect, useState } from 'react';
+import NearBus from './nearBus';
 import classes from './search.module.css';
-import NearBus from "./nearBus";
+import SearchForm from './searchForm';
 
 export default function Search() {
   const [result, setResult] = useState(null);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [passengerCount, setPassengerCount] = useState(0);
+
+  useEffect(() => {
+    const fetchPassengerCount = async () => {
+      try {
+        const response = await fetch('/api/passengers');
+        const data = await response.json();
+        setPassengerCount(data.total);
+      } catch (err) {
+        console.error('Error fetching passenger count:', err);
+      }
+    };
+
+    fetchPassengerCount();
+  }, []);
 
   const handleSearch = async (startingLocation, endingLocation) => {
     setIsLoading(true);
@@ -17,7 +31,7 @@ export default function Search() {
         `/api/search?starting_location=${startingLocation}&ending_location=${endingLocation}`
       );
       if (!res.ok) {
-        throw new Error("Network response was not ok");
+        throw new Error('Network response was not ok');
       }
       const data = await res.json();
       setResult(data);
@@ -37,9 +51,12 @@ export default function Search() {
             <ul>
               {result.bus.map((b) => (
                 <li className={classes.list} key={b.bus_number}>
-                  <NearBus busNumber={b.bus_number}
+                  <NearBus
+                    busNumber={b.bus_number}
                     arrivalTime={b.arrival_time}
-                    departureTime={b.departure_time}/>
+                    departureTime={b.departure_time}
+                    passengerCount={passengerCount} // Pass the count as a prop
+                  />
                 </li>
               ))}
             </ul>

@@ -1,8 +1,7 @@
-// nearBus.js
 import { useState } from 'react';
 import classes from './nearBus.module.css';
 
-export default function NearBus({ busNumber, arrivalTime, departureTime }) {
+export default function NearBus({ busNumber, arrivalTime, departureTime, passengerCount }) {
   const [mapOpen, setMapOpen] = useState(false);
 
   const busLocation = {
@@ -21,11 +20,15 @@ export default function NearBus({ busNumber, arrivalTime, departureTime }) {
   return (
     <>
       <div className={classes.container}>
-        <div className={classes.busNumber}>{busNumber}</div>
+        <div className={classes.busInfo}>
+          <div className={classes.busNumber}>{busNumber}</div>
+        </div>
         <div className={classes.timingsContainer}>
           <div className={classes.arrival}>Arrival <span className={classes.arrivalTime}>{arrivalTime}</span></div>
           <div className={classes.departure}>Departure <span className={classes.departureTime}>{departureTime}</span></div>
         </div>
+        <div className={classes.passengerCount}>Passengers: {passengerCount}/45</div>
+
         <button onClick={openMap} className={classes.mapButton}>Show on Map</button>
       </div>
 
