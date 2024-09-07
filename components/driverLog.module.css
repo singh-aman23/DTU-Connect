@@ -1,0 +1,29 @@
+.container{
+    display :flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 4em;
+    width: 40em;
+    gap : 10px;
+  }
+  
+  .heading {
+    text-align: center;
+  }
+  
+  .tableHeading {
+    font-size: x-large;
+    padding: 0px 0px 10px 0px;
+  }
+  
+  .table {
+    text-align: center;
+    background-color: #1B2432;
+    padding: 2em;
+    color: white;
+    size: 5em;
+    border-radius: 20px;
+    margin-bottom: 3em;
+    font-size: 18px;
+    border-spacing: 5px;
+  }
