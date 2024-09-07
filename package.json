@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && node initdb.js && node db.js",
     "start": "next start",
     "lint": "next lint"
+    
   },
   "dependencies": {
     "@lucia-auth/adapter-sqlite": "^3.0.2",
